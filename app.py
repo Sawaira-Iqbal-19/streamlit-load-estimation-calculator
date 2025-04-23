@@ -13,7 +13,11 @@ appliance_power = {
     "Juicer": 0.3,
     "Mobile Charger": 0.01,
     "LCD/TV": 0.1,
-    "Electric Bike Charger": 0.8
+    "Electric Bike Charger": 0.8,
+    "Fridge": 0.15,
+    "Washing Machine": 1.0,
+    "Spinner": 0.5,
+    "Geyser": 3.0
 }
 
 appliance_descriptions = {
@@ -27,7 +31,11 @@ appliance_descriptions = {
     "Juicer": "Electric juicer for fruit or vegetable extraction.",
     "Mobile Charger": "Mobile phone charger.",
     "LCD/TV": "LED/LCD TV or monitor.",
-    "Electric Bike Charger": "Charger for electric two-wheelers."
+    "Electric Bike Charger": "Charger for electric two-wheelers.",
+    "Fridge": "Refrigerator for food storage.",
+    "Washing Machine": "Washing machine for laundry.",
+    "Spinner": "Dryer spinner for clothes.",
+    "Geyser": "Electric geyser for hot water."
 }
 
 # Cable size suggestion based on amperes
@@ -76,9 +84,11 @@ unit_cost = st.number_input("Enter Cost per Unit (₨/kWh)", min_value=1.0, valu
 
 # Room template option
 room_templates = {
-    "Bedroom": {"Fan": 1, "Bulb": 2, "Mobile Charger": 2, "LCD/TV": 1},
-    "Living Room": {"Fan": 2, "Bulb": 4, "AC": 1, "LCD/TV": 1, "Laptop Charger": 1},
-    "Kitchen": {"Oven": 1, "Juicer": 1, "Iron": 1}
+    "Bedroom": {"Fan": 1, "Bulb": 2, "Mobile Charger": 2, "AC": 1, "LCD/TV": 1, "Laptop Charger": 1},
+    "Living Room": {"Fan": 2, "Bulb": 4, "AC": 1, "LCD/TV": 1, "Laptop Charger": 1, "Mobile Charger": 1},
+    "Kitchen": {"Oven": 1, "Juicer": 1, "Bulb": 2, "Fridge": 1},
+    "Washroom": {"Geyser": 1, "Bulb": 1, "Motor": 1},
+    "Laundry Room": {"Washing Machine": 1, "Spinner": 1, "Iron": 1}
 }
 
 
@@ -136,3 +146,7 @@ st.write(f"💡 Total Load: {total_load_kw:.2f} kW ({total_amperes:.2f} A)")
 st.write(f"🛡️ Main Circuit Breaker: {main_breaker}")
 st.write(f"🔗 Main Cable Size: {main_cable}")
 st.write(f"💸 Estimated Monthly Energy Cost: ₨{monthly_cost:.2f} (at ₨{unit_cost:.2f}/unit)")
+
+ 
+
+     
